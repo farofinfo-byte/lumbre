@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lumbre</title>
+  <meta name="description" content="Un espacio personal y entre amigos para acercarte a Dios cada día.">
+  <meta name="theme-color" content="#FBF6EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1326" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icono-180.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Lumbre">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/estilos.css">
+
+  <script>
+    // Tema: claro, oscuro o automático (antes de pintar, para evitar parpadeos)
+    window.aplicarTema = function () {
+      var elegido = 'auto';
+      try { elegido = localStorage.getItem('lumbre:tema') || 'auto'; } catch (e) {}
+      var oscuro = elegido === 'oscuro' || (elegido === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.setAttribute('data-tema', oscuro ? 'oscuro' : 'claro');
+    };
+    window.aplicarTema();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', window.aplicarTema);
+  </script>
+</head>
+<body>
+  <!-- Degradados compartidos por los logos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg-llama" x1="32" y1="5" x2="32" y2="43" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#F2C877"/><stop offset="1" stop-color="#C8902E"/>
+      </linearGradient>
+      <linearGradient id="lg-vela" x1="32" y1="5" x2="32" y2="43" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#FCE3A6"/><stop offset="1" stop-color="#E0A23F"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div id="app"><div class="entrar"><div class="cargando"></div></div></div>
+
+  <script type="module" src="/js/main.js"></script>
+
+  <!-- API.Bible · Fair Use Management System (obligatorio en apps web) -->
+  <script>
+    window.fumsData = window.fumsData || [];
+    window.fums = window.fums || function () { window.fumsData.push(arguments); };
+  </script>
+  <script async src="https://pkg.api.bible/fumsV3.min.js"></script>
+</body>
+</html>

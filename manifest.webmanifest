@@ -1,0 +1,16 @@
+{
+  "name": "Lumbre",
+  "short_name": "Lumbre",
+  "description": "Un espacio personal y entre amigos para acercarte a Dios cada día.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B1326",
+  "theme_color": "#0B1326",
+  "icons": [
+    { "src": "/assets/icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
